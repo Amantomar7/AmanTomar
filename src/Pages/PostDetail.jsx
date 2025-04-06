@@ -68,7 +68,7 @@ const postContent = {
                     amount of citations. This Paper introduces new form of attention different from the early ones and it focusses on the computional cost of model, as earlier 
                     model like RNNs and LSTMs used in NLP are sequential in nature and computation is also sequential which lead to huge amount of time training and no big advantages
                     of parallelism of GPUs can be taken. This paper takes care of all of this. And In this post we will look into every aspect of it, with code in pytorch, if you are not
-                    familiar with pytorch go watch the post on <a href="http://localhost:5173/posts/post1">pytorch</a>.
+                    familiar with pytorch go watch the post on <a href="https://amantomar7.github.io/posts/post1">pytorch</a>.
                 </p>
                 <h4> Transformer Architecture </h4>
                 <p> Here we will explore transformers Architecture as proposed in the paper, attention is all you need.
