@@ -64,6 +64,15 @@ const postContent = {
                 <p className="lead">
                     We will learn this cool Transformer model which is now used in every single LLMs that we see around, And it's fundamental thing which is Attention mechanism.
                 </p>
+                <p> Introduced in 2017 by Google research, this is remarkably one of the best paper's in the history of Deep Learning, and for research purposes it has got most 
+                    amount of citations. This Paper introduces new form of attention different from the early ones and it focusses on the computional cost of model, as earlier 
+                    model like RNNs and LSTMs used in NLP are sequential in nature and computation is also sequential which lead to huge amount of time training and no big advantages
+                    of parallelism of GPUs can be taken. This paper takes care of all of this. And In this post we will look into every aspect of it, with code in pytorch, if you are not
+                    familiar with pytorch go watch the post on <a href="http://localhost:5173/posts/post1">pytorch</a>.
+                </p>
+                <h4> Transformer Architecture </h4>
+                <p> Here we will explore transformers Architecture as proposed in the paper, attention is all you need.
+                </p>
             </div>
         </div>
     ),
