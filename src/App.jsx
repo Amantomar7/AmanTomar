@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Dashboard />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/AmanTomar" element={<Home />} />
         <Route path="/posts" element={<PostsList />} />
         <Route path="/posts/:postId" element={<PostDetail />} />
         <Route path="/categories" element={<Categories />} />

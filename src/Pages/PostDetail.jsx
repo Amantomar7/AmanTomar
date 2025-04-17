@@ -6,54 +6,56 @@ import Attention from '../assets/images.png';
 
 const postContent = {
     post1: (
-<div className="container mt-4">
-    <div className="card shadow-lg p-4">
-        <h1 className="mb-3 text-center">Machine Learning: Introduction to PyTorch</h1>
-        
-        <img
-            src={pytorchImage}
-            alt="Machine Learning"
-            className="img-fluid rounded mb-3 d-block mx-auto"
-            style={{ maxHeight: '400px', maxWidth: '200px' }}
-        />
+        <div className="container my-5 text-start">
+            <div className="bg-white p-5 rounded shadow-lg">
+                <h1 className="mb-4 fw-bold text-primary">
+                    <img
+                        src={pytorchImage}
+                        alt="Machine Learning"
+                        style={{ maxHeight: '100px', maxWidth: '50px' }}
+                    />
+                    Machine Learning: Introduction to PyTorch</h1>
+               
 
-        <p className="lead">
-            Machine Learning workflows typically involve working with data, designing models, optimizing parameters, and saving trained models. 
-            This tutorial provides a comprehensive introduction to implementing a complete ML workflow using PyTorch, 
-            with references for deeper learning at each step.
-        </p>
+                <p className="lead text-secondary text-left">
+                    Machine Learning workflows typically involve working with data, designing models, optimizing parameters, and saving trained models.
+                    This tutorial provides a comprehensive introduction to implementing a complete ML workflow using PyTorch, with references for deeper learning at each step.
+                </p>
 
-        <h2 className="mt-4">Why PyTorch?</h2>
-        <p>
-            PyTorch is a widely used deep learning framework that provides flexibility, ease of debugging, and dynamic computation graphs.
-            One of the key advantages of PyTorch is its seamless integration with GPUs, allowing for highly efficient machine learning computations.
-        </p>
+                <hr className="my-4" />
 
-        <h2 className="mt-4">What Will You Learn?</h2>
-        <ul className="list-group list-group-flush">
-            <li className="list-group-item">Understanding Tensors and their operations</li>
-            <li className="list-group-item">Building a simple neural network from scratch</li>
-            <li className="list-group-item">Training the model on the MNIST dataset</li>
-            <li className="list-group-item">Optimizing and evaluating the model</li>
-        </ul>
+                <h2 className="mt-4 text-dark">Why PyTorch?</h2>
+                <p>
+                    PyTorch is a widely used deep learning framework that provides flexibility, ease of debugging, and dynamic computation graphs.
+                    One of the key advantages of PyTorch is its seamless integration with GPUs, allowing for highly efficient machine learning computations.
+                </p>
 
-        <h2 className="mt-4">Getting Started</h2>
-        <p>
-            To get started with PyTorch, ensure you have it installed in your environment. You can install PyTorch using:
-        </p>
-        <pre className="bg-light p-2 rounded">
-            <code>pip install torch torchvision torchaudio</code>
-        </pre>
+                <h2 className="mt-4 text-dark">What Will You Learn?</h2>
+                <ul className="list-group mb-4">
+                    <li className="list-group-item"> Understanding Tensors and their operations</li>
+                    <li className="list-group-item">Building a simple neural network from scratch</li>
+                    <li className="list-group-item">Training the model on the MNIST dataset</li>
+                    <li className="list-group-item">Optimizing and evaluating the model</li>
+                </ul>
 
-        <h2> Understanding Tensors and their operations </h2>
-        <p> This is out first topic, that we will discuss!</p>
-    </div>
-</div>
+                <h2 className="mt-4 text-dark">🛠 Getting Started</h2>
+                <p>
+                    To get started with PyTorch, ensure you have it installed in your environment. You can install PyTorch using:
+                </p>
+
+                <pre className="bg-dark text-white p-3 rounded"><code>pip install torch torchvision torchaudio</code></pre>
+
+                <h2 className="mt-4 text-dark">🧠 Understanding Tensors</h2>
+                <p>This is our first topic — let’s dive into what tensors are and how to manipulate them in PyTorch.</p>
+            </div>
+        </div>
+
+
 
     ),
     post2: (
-        <div className="container mt-4">
-            <div className="card shadow-lg p-4">
+        <div className="container my-5 text-start">
+            <div className="bg-white p-5 rounded shadow-lg">
                 <h1 className="mb-3">Introduction to Transformers</h1>
                 <img
                     src={Attention}
@@ -62,17 +64,23 @@ const postContent = {
                     style={{ maxHeight: '1000px', maxWidth: '200px' }}
                 />
                 <p className="lead">
-                    We will learn this cool Transformer model which is now used in every single LLMs that we see around, And it's fundamental thing which is Attention mechanism.
+                    We will learn this cool Transformer model which is now used in every single LLMs that we see around, And will study what is attention.
                 </p>
-                <p> Introduced in 2017 by Google research, this is remarkably one of the best paper's in the history of Deep Learning, and for research purposes it has got most 
-                    amount of citations. This Paper introduces new form of attention different from the early ones and it focusses on the computional cost of model, as earlier 
+                <h3> History </h3>
+                <p> Introduced in 2017 by Google research, this is remarkably one of the best paper's in the history of Deep Learning, and for research purposes it has got most
+                    amount of citations. This Paper introduces new form of attention different from the early ones and it focusses on the computional cost of model, as earlier
                     model like RNNs and LSTMs used in NLP are sequential in nature and computation is also sequential which lead to huge amount of time training and no big advantages
-                    of parallelism of GPUs can be taken. This paper takes care of all of this. And In this post we will look into every aspect of it, with code in pytorch, if you are not
-                    familiar with pytorch go watch the post on <a href="https://amantomar7.github.io/posts/post1">pytorch</a>.
+                    of parallelism of GPUs can be taken. This paper takes care of all of this. And In this post we will look into every aspect of it, paper link <a href="https://arxiv.org/abs/1706.03762">here</a>.
                 </p>
-                <h4> Transformer Architecture </h4>
-                <p> Here we will explore transformers Architecture as proposed in the paper, attention is all you need.
+                <h4> Earlier Models </h4>
+                <p> 
+                    In NLP(Natural Language processing), for a long time for sequences, we are using RNN's and LSTM's which are the varient of RNN's but RNN approach
+                    is not much scalable as they are sequential in nature and output of previous time step must feed to the next time steps, and cause of their sequential nature, training very large RNN, is hard
+                    and takes a long time, to train, as at that time we are also using attention(which we will discuss later), but this sequuential nature is one of the biggest problem of RNNs, Lstms or GRus. And just because of that
+                    we have transformer's a computational effective and can be prallelized and can be run on GPus.
                 </p>
+                <h4> Attention </h4>
+                Now, first let's look into what is attention, 
             </div>
         </div>
     ),
