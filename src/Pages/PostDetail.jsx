@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import pytorchImage from '../assets/pytorch-dark-background.png';
 import Attention from '../assets/images.png';
+import attention from '../assets/attention.png';
 
 
 const postContent = {
@@ -15,7 +16,7 @@ const postContent = {
                         style={{ maxHeight: '100px', maxWidth: '50px' }}
                     />
                     Machine Learning: Introduction to PyTorch</h1>
-               
+
 
                 <p className="lead text-secondary text-left">
                     Machine Learning workflows typically involve working with data, designing models, optimizing parameters, and saving trained models.
@@ -73,14 +74,40 @@ const postContent = {
                     of parallelism of GPUs can be taken. This paper takes care of all of this. And In this post we will look into every aspect of it, paper link <a href="https://arxiv.org/abs/1706.03762">here</a>.
                 </p>
                 <h4> Earlier Models </h4>
-                <p> 
+                <p>
                     In NLP(Natural Language processing), for a long time for sequences, we are using RNN's and LSTM's which are the varient of RNN's but RNN approach
                     is not much scalable as they are sequential in nature and output of previous time step must feed to the next time steps, and cause of their sequential nature, training very large RNN, is hard
                     and takes a long time, to train, as at that time we are also using attention(which we will discuss later), but this sequuential nature is one of the biggest problem of RNNs, Lstms or GRus. And just because of that
                     we have transformer's a computational effective and can be prallelized and can be run on GPus.
                 </p>
                 <h4> Attention </h4>
-                Now, first let's look into what is attention, 
+                Let's look at these sentence <br />
+                <code> The chicken didn’t cross the road because it was too tired. </code> <br />
+                <code> The chicken didn’t cross the road because it was too wide </code> <br />
+                In these 2 sentences how model will know that it is talking about chicken in the first sentence and talking about the road in the second sentence,
+                Sequential models like RNNs and LStms make a single embeddings at each time step, so that embeddings may forget larger context and may not <b>attend</b> to all the
+                context needed to make the inference. <br />
+                So that's why introduce attention which gives attention to all tokens in the sentence, not equally as we may want to attend some part of sentences more
+                than other, to make the prediciton of the next sentence. <br /> <br />
+                This picture demonstrates this well,
+                <img
+                    src={attention}
+                    alt="ABS"
+                    className="img-fluid rounded mb-3 d-block mx-auto"
+                    style={{ maxHeight: '400px', maxWidth: '600px' }}
+                />
+                here in the image, we want model to know that it is more related to the chicken than it is to the road, while it makes the prediction, or asked the meaning of the sentence. <br />
+
+                More Formally, <br />
+
+                We give score to all the tokens in the sentences using this a<sub>i</sub> = ∑ (j ≤ i) α<sub>ij</sub> x<sub>j</sub>, here α<sub>ij</sub> is the score that we are giving to the particular token using all the tokens that have came before it, x<sub>j</sub> is the jth token.<br/> <br/>
+                
+
+                <h4> Now, let's look at big behemoth, Transformers </h4>
+
+
+
+
             </div>
         </div>
     ),
